@@ -30,7 +30,7 @@ label{font-weight:normal; font-size:1em; display:block;}
 .input-group[class*=col-] {float: left;padding-right: 0;padding-left: 0;}
 .input-group[class*=col-]:nth-of-type(2) input,
 .input-group[class*=col-]:nth-of-type(4) input,
-.input-group[class*=col-]:nth-of-type(6) select {float: right;}
+.input-group[class*=col-]:nth-of-type(2) select {float: right;}
 .input-group[class*=col-] input, .input-group[class*=col-] select{width: 98%}
 .input-group[class*=col-] input.nr-processo{width:80%}
 .input-group[class*=col-] .fa{float:right; font-size: 1.6em; margin:3px 23px 0 0; padding:0;}
@@ -51,17 +51,17 @@ h3{font-size:1.2em;}
 .cal th td, .cal tr td{text-align:center;}
 
 /* aside */
-.today{text-align: center; font-size:1.3em; margin:20px 0 0 0; line-height: 70px; background:linear-gradient(#FFF, #f0f0f0);}
-.today .mega-dia-mes{font-size:6em; display:block;}
+.hoje{text-align: center; font-size:1.3em; margin:20px 0 0 0; line-height: 70px; background:linear-gradient(#FFF, #f0f0f0);}
+.hoje .mega-dia-mes{font-size:6em; display:block;}
 
 
 /* tabela dia */
-.box-calendario{height:565px; position: relative; overflow: auto;}
+.box-calendario{height:500px; position: relative; overflow: auto;}
 .tabela-dia{border:1px solid #CCC; width: 100%; border-collapse:separate;}
 .tabela-dia tbody tr td{padding:10px; border: 0; border-collapse: collapse}
 .tabela-dia tbody tr td:first-child{width:5%;}
 .tabela-dia tbody tr{box-shadow:2px 5px 5px #DDD; height: 100px;}
-.tabela-dia tbody tr.hora-atual{background:pink;}
+.tabela-dia tbody tr.hora-atual{background:#ffe8eb;}
 .tabela-dia tbody tr.hora-atual td{border-bottom:2px solid red;}
 
 /** modal **/
@@ -255,7 +255,7 @@ FIM COMMUM BUTTON - REMOVER
  */
 
 /** fab button **/
-.fab-container {
+/*.fab-container {
     margin: 1em;
     position: fixed;
     right: 0;
@@ -276,7 +276,7 @@ FIM COMMUM BUTTON - REMOVER
     position: relative;
     cursor: pointer;
     transition: .3s;
-}
+}*/
 
 @media only screen and (min-width: 1024px) {
 
