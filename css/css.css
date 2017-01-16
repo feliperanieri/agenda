@@ -2,6 +2,7 @@ body{margin:0; padding:0; font-family: "Helvetica Neue",Helvetica,Arial,sans-ser
 a, a:hover{color:#4a4a4a}
 ul, ol{list-style: none;}
 abbr{text-decoration: none !important; border: none !important; cursor: inherit !important}
+label{font-weight:normal; font-size:1em; display:block;}
 .form-control::-webkit-input-placeholder{color:#000}
 .form-control::-moz-placeholder{color:#000}
 .form-control:-ms-input-placeholder{color:#000}
@@ -24,11 +25,13 @@ abbr{text-decoration: none !important; border: none !important; cursor: inherit 
 .data{position: absolute; top:10px; right:10px;}
 .btn-default:focus, .btn-default:active{background:#FFF}
 .btn-default:hover{background: #7c7c3f; color: #FFF; transition: .3s}
+.btn-agendamento{margin:10px 20px;}
 .fa{float:left; margin: 0; font-size:1.5em; color:#7c7c3f;}
 .input-group[class*=col-] {float: left;padding-right: 0;padding-left: 0;}
 .input-group[class*=col-]:nth-of-type(2) input,
-.input-group[class*=col-]:nth-of-type(4) input {float: right;}
-.input-group[class*=col-] input{width: 98%}
+.input-group[class*=col-]:nth-of-type(4) input,
+.input-group[class*=col-]:nth-of-type(6) select {float: right;}
+.input-group[class*=col-] input, .input-group[class*=col-] select{width: 98%}
 .input-group[class*=col-] input.nr-processo{width:80%}
 .input-group[class*=col-] .fa{float:right; font-size: 1.6em; margin:3px 23px 0 0; padding:0;}
 
@@ -36,6 +39,7 @@ h1, h2, h3{color: #7c7c3f;}
 h3{font-size:1.2em;}
 
 .header{position: relative; border-bottom:1px solid #CCC; margin:0 0 20px 0; padding:0; /*background:linear-gradient(#FFF, #f0f0f0); background:#f0f0f0;*/}
+.header .detail{position: absolute; border-bottom:3px solid #7c7c3f; bottom: 0; left:0px; display:block; width: 0%;}
 .header h1{font-size:1.5em; margin:10px; float:left;}
 .header .form-group{position:relative; top:5px;}
 .header .form-group .form-control{margin:5px 0 0 0; width: auto;}
@@ -45,6 +49,20 @@ h3{font-size:1.2em;}
 .container-fluid aside{margin: 0; padding: 0;}
 .cal{width:100%; border:1px solid #CCC; border-radius:5px; border-collapse: separate; font-size:.9em; padding:5px; margin:10px 0 0 0}
 .cal th td, .cal tr td{text-align:center;}
+
+/* aside */
+.today{text-align: center; font-size:1.3em; margin:20px 0 0 0; line-height: 70px; background:linear-gradient(#FFF, #f0f0f0);}
+.today .mega-dia-mes{font-size:6em; display:block;}
+
+
+/* tabela dia */
+.box-calendario{height:565px; position: relative; overflow: auto;}
+.tabela-dia{border:1px solid #CCC; width: 100%; border-collapse:separate;}
+.tabela-dia tbody tr td{padding:10px; border: 0; border-collapse: collapse}
+.tabela-dia tbody tr td:first-child{width:5%;}
+.tabela-dia tbody tr{box-shadow:2px 5px 5px #DDD; height: 100px;}
+.tabela-dia tbody tr.hora-atual{background:pink;}
+.tabela-dia tbody tr.hora-atual td{border-bottom:2px solid red;}
 
 /** modal **/
 .modal h2{font-size: 1.5em}
@@ -56,6 +74,13 @@ h3{font-size:1.2em;}
 }
 .modal h3{
   cursor: pointer;
+}
+.modal-footer {
+    margin: 20px 0 0 0;
+    padding: 10px 20px;
+    text-align: right;
+    border-top: 1px solid #e5e5e5;
+    clear: both;
 }
 
 .accordion .fa {
@@ -89,64 +114,145 @@ h3{font-size:1.2em;}
 .divCorAzul{
 	background-color: #003399;
 }
-.divCorAzul-active{
+.divCorAzul.-active{
   background-color: rgba(0, 51, 153, .25);
 }
 .divCorVermelho{
 	background-color: #FF0000;
 }
-.divCorVermelho-active{
+.divCorVermelho.-active{
 	background-color: rgba(255, 0, 0, .25);
 }
 .divCorVerde{
 	background-color: #32CD32;
 }
-.divCorVerde-active{
+.divCorVerde.-active{
   background-color: rgba(50, 205, 50, .25);
 }
 .divCorRoxo{
   background-color: #6A5ACD;
 }
-.divCorRoxo-active{
+.divCorRoxo.-active{
   background-color: rgba(106, 90, 205, .25);
 }
 .divCorOuro{
 	background-color: #FFD700;
 }
-.divCorOuro-active{
+.divCorOuro.-active{
   background-color: rgba(255, 215, 0, .25);
 }
 .divCorLaranja{
 	background-color: #FF8C00;
 }
-.divCorLaranja-active{
+.divCorLaranja.-active{
 	background-color: rgba(255, 140, 0, .25);
 }
 .divCorCinza{
 	background-color: #CDCDC1;
 }
-.divCorCinza-active{
+.divCorCinza.-active{
 	background-color: rgba(205, 205, 193, .25);
 }
 
 .divCorRosa{
   background-color: #C71585;
 }
-.divCorRosa-active{
+.divCorRosa.-active{
   background-color: rgba(199, 21, 133, .25);
 }
 
 .divCorMaestro{
 	background-color: #4F4F28;
 }
-.divCorMaestro-active{
+.divCorMaestro.-active{
 	background-color: rgba(79, 79, 40, .25);
 }
 
 /** accordion **/
 .content-accordion{display: none;}
-.content-accordion label{font-weight:normal; font-size:1em;}
 .content-accordion label:nth-of-type(1){float: left;}
+
+/** relação e-mails **/
+.relacao-emails{padding:0; margin:0;}
+.relacao-emails label{display: inline; float:unset !important; font-weight: bold;}
+
+.box-relacao-emails button {
+	height: 29px;
+}
+.box-relacao-emails button.btactions {
+	float: left;
+	position: relative;
+	padding-left: 20px;
+	overflow: hidden;
+}
+.box-relacao-emails button.btactions i {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+.box-relacao-emails button.btactions span {
+	display: inline-block;
+	line-height: 22px;
+	max-width: 0;
+	-webkit-transition: max-width 1s, padding 1s;
+	transition: max-width 1s, padding 1s;
+	overflow: hidden;
+}
+.box-relacao-emails button.btactions:hover span {
+	max-width: 500px;
+	padding-left: 5px;
+}
+
+/*
+********************************************************************
+********************************************************************
+REMOVER O ESTILO ABAIXO QUANDO INTEGRAR COM O MAESTRO (COMMOM-BUTTON)
+********************************************************************
+********************************************************************
+ */
+.commom-button{
+    border: 0px;
+    border-radius: 4px;
+    background: #7c7c3f;
+    padding: 8px 12px;
+    color: white;
+    font-family: 'Verdana';
+    font-size: 12px;
+    cursor: pointer;
+    line-height: 100%;
+    transition: .2s;
+}
+
+.commom-button:hover{
+    background: #85902d;
+}
+
+.commom-button.input-accessory {
+    padding: 5px 8px;
+    margin-top: 8px;
+    height: 29px;
+}
+
+.commom-button.small {
+    height: 20px;
+    padding: 0px 12px;
+    font-size: 10px;
+    font-weight: 600;
+    float: right;
+    margin: 0px;
+}
+.commom-button .fa {
+    color: #FFF;
+    font-size: 1em;
+    margin: 0;
+}
+/*
+********************************************************************
+********************************************************************
+FIM COMMUM BUTTON - REMOVER
+********************************************************************
+********************************************************************
+ */
 
 /** fab button **/
 .fab-container {
@@ -194,3 +300,6 @@ h2{font-size:1.5em}
 @media screen and (max-width: 736px) and (orientation:landscape) {
 
 }
+
+/*********** não copiar para o maestro ************/
+.ml10{margin-left:10px;}

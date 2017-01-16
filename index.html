@@ -29,6 +29,7 @@
       </select>
     </div>
     <p class="data">Terça-feira Dia 10 de Janeiro de 2017</p>
+    <i class="detail"></i>
   </div>
 
   <div class="container-fluid">
@@ -88,7 +89,118 @@
           </tr>
         </tbody>
       </table>
+
+      <p class="today shadow2">
+        <span class="mega-dia-semana">Terça-feira</span>
+        <span class="mega-dia-mes">10</span>
+        <span class="mega-mes">Janeiro</span>
+      </p>
     </aside>
+
+    <section class="box-calendario col-sm-10">
+      <h2>Seus compromissos de hoje</h2>
+
+      <table class="tabela-dia">
+        <tbody>
+          <tr class="00">
+            <td><time>00:00</time></td>
+            <td></td>
+          </tr>
+          <tr class="01">
+            <td><time>01:00</time></td>
+            <td></td>
+          </tr>
+          <tr class="02">
+            <td><time>02:00</time></td>
+            <td></td>
+          </tr>
+          <tr class="03">
+            <td><time>03:00</time></td>
+            <td></td>
+          </tr>
+          <tr class="04">
+            <td><time>04:00</time></td>
+            <td></td>
+          </tr>
+          <tr class="05">
+            <td><time>05:00</time></td>
+            <td></td>
+          </tr>
+          <tr class="06">
+            <td><time>06:00</time></td>
+            <td></td>
+          </tr>
+          <tr class="07">
+            <td><time>07:00</time></td>
+            <td></td>
+          </tr>
+          <tr class="08">
+            <td><time>08:00</time></td>
+            <td></td>
+          </tr>
+          <tr class="09">
+            <td><time>09:00</time></td>
+            <td></td>
+          </tr>
+          <tr class="10">
+            <td><time>10:00</time></td>
+            <td></td>
+          </tr>
+          <tr class="11">
+            <td><time>11:00</time></td>
+            <td></td>
+          </tr>
+          <tr class="12">
+            <td><time>12:00</time></td>
+            <td></td>
+          </tr>
+          <tr class="13">
+            <td><time>13:00</time></td>
+            <td></td>
+          </tr>
+          <tr class="14">
+            <td><time>14:00</time></td>
+            <td></td>
+          </tr>
+          <tr class="15">
+            <td><time>15:00</time></td>
+            <td></td>
+          </tr>
+          <tr class="16">
+            <td><time>16:00</time></td>
+            <td></td>
+          </tr>
+          <tr class="17">
+            <td><time>17:00</time></td>
+            <td></td>
+          </tr>
+          <tr class="18">
+            <td><time>18:00</time></td>
+            <td></td>
+          </tr>
+          <tr class="19">
+            <td><time>19:00</time></td>
+            <td></td>
+          </tr>
+          <tr class="20">
+            <td><time>20:00</time></td>
+            <td></td>
+          </tr>
+          <tr class="21">
+            <td><time>21:00</time></td>
+            <td></td>
+          </tr>
+          <tr class="22">
+            <td><time>22:00</time></td>
+            <td></td>
+          </tr>
+          <tr class="23">
+            <td><time>23:00</time></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
   </div>
 
 
@@ -107,15 +219,9 @@
             </select>
             <div class="input-group col-sm-6">
               <input type="text" id="data" class="form-control datepicker" placeholder="Informe a data">
-              <!-- <span class="input-group-addon">
-                  <span class="glyphicon glyphicon-calendar"></span>
-              </span> -->
             </div>
             <div class="input-group clockpicker col-sm-6" data-placement="bottom" data-align="top" data-autoclose="true">
               <input type="text" class="form-control" placeholder="Informe o horário">
-              <!-- <span class="input-group-addon">
-                  <span class="glyphicon glyphicon-time"></span>
-              </span> -->
             </div>
             <input type="text" class="form-control" placeholder="Informe o compromisso">
 
@@ -200,11 +306,121 @@
                     <i class="fa fa-check"></i>
                   </div>
                 </div>
+
+                <br clear="all">
+                <label class="repetir-evento">Repetir em outras datas?</label>
+                <div class="box-repetir-evento">
+                  <div class="input-group col-sm-6">
+                    <select class="form-control">
+                      <optgroup>
+                        <option value="0">Todo dia</option>
+                        <option value="1">A cada 15 dias</option>
+                        <option value="2">Toda semana</option>
+                        <option value="3">Todo mês</option>
+                        <option value="4">Todo ano</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                  <div class="input-group col-sm-6">
+                    <select class="form-control">
+                      <optgroup>
+                        <option value="0" selected disabled>Pelos próximos</option>
+                        <option value="1">1 mês</option>
+                        <option value="2">2 meses</option>
+                        <option value="3">3 meses</option>
+                        <option value="4">4 meses</option>
+                        <option value="5">5 meses</option>
+                        <option value="6">6 meses</option>
+                        <option value="7">7 meses</option>
+                        <option value="8">8 meses</option>
+                        <option value="9">9 meses</option>
+                        <option value="10">10 meses</option>
+                        <option value="11">11 meses</option>
+                        <option value="12">12 meses</option>
+                        <option value="13">18 meses</option>
+                        <option value="14">Dois anos</option>
+                        <option value="15">Três anos</option>
+                      </optgroup>
+                    </select>
+                  </div>
+
+                  <div class="input-group col-sm-6">
+                    <input type="text" id="inicio-periodo" class="form-control datepicker" placeholder="Informe a data inicial do período">
+                  </div>
+                  <div class="input-group col-sm-6">
+                    <input type="text" id="fim-periodo" class="form-control datepicker" placeholder="Informe a data final do período">
+                  </div>
+
+                  <select class="form-control">
+                    <optgroup>
+                      <option value="0" selected disabled>Repetir na semana</option>
+                      <option value="0">Toda semana</option>
+                      <option value="1">Dias úteis</option>
+                      <option value="2">Fim de semana</option>
+                    </optgroup>
+                  </select>
+                </div>
+              </div>
+
+            </div>
+
+
+            <div class="box-relacao-emails">
+              <h3 class="accordion">
+                <i class="fa fa-sort-desc"></i>
+                Lembrar-me por e-mail
+              </h3>
+              <div class="content-accordion">
+                <div class="input-group col-sm-6">
+                  <select class="form-control">
+                    <optgroup>
+                      <option value="0">5 minutos antes</option>
+                      <option value="1">10 minutos antes</option>
+                      <option value="2">15 minutos antes</option>
+                      <option value="3">30 minutos antes</option>
+                      <option value="4">1 hora antes</option>
+                      <option value="5">2 horas antes</option>
+                      <option value="6">1 dia antes</option>
+                      <option value="7">2 dias antes</option>
+                      <option value="8">3 dias antes</option>
+                      <option value="9">4 dias antes</option>
+                      <option value="10">5 dias antes</option>
+                      <option value="11">6 dias antes</option>
+                      <option value="12">7 dias antes</option>
+                    </optgroup>
+                  </select>
+                </div>
+
+                <ul class="relacao-emails col-sm-12">
+                  <li class="col-sm-6">
+                    <input type="checkbox">
+                    <label>felipe.franca@soc.com.br</label>
+                  </li>
+                  <li class="col-sm-6">
+                    <input type="checkbox">
+                    <label>email@soc.com.br</label>
+                  </li>
+                  <li class="col-sm-6">
+                    <input type="checkbox">
+                    <label>felipe.ranieri@soc.com.br</label>
+                  </li>
+                  <li class="col-sm-6">
+                    <input type="checkbox">
+                    <label>contato@soc.com.br</label>
+                  </li>
+                </ul>
+                <br clear="all">
+                <button type="button" class="commom-button input-accessory btactions"><i class="fa fa-plus"></i> <span>Marcar todos listados</span></button>
+                <button type="button" class="commom-button input-accessory ml10 btactions"><i class="fa fa-minus"></i> <span>Desmarcar todos listados</span></button>
               </div>
             </div>
           </div>
         </div>
-        <br clear="all">
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Salvar</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        </div>
       </div>
     </div>
   </div>
@@ -219,6 +435,19 @@
   $('.clockpicker').clockpicker();
 
   $(function() {
+    $(".header .detail").animate({
+       width: "100%"
+     }, 200);
+
+      $(".tabela-dia tr").each(function(){
+        var d = new Date(),
+            h = d.getHours(),
+            verificaHora = $(this).attr("class");
+            if(verificaHora == h){
+              $(this).addClass("hora-atual");
+            }
+      });
+
     $(".accordion").click(function() {
     	if($(this).parent("div").hasClass("active")){
         $(this).children(".fa").removeClass("arrow-active");
@@ -226,30 +455,28 @@
     		$(this).parent("div").removeClass("active");
     	}else{
     		$(".active > .content-accordion").slideUp("fast");
+        $(".fa").removeClass("arrow-active");
     		$(".accordion").parent("div").removeClass("active");
     		$(this).parent("div").addClass("active");
         $(this).children(".fa").addClass("arrow-active");
     		$(".active > .content-accordion").slideDown("fast");
     	}
     });
+
     $(".cor-compromisso > input").click(function(){
-      var classe = $(this).parent().attr("class"),
-          check = $(this).parent().children(".fa"),
+      var check = $(this).parent().children(".fa"),
           corCheck = $(this).val();
 
-      // if($(this).parent().hasClass(classe+"-active")){
-      //   $(this).parent().removeClass(classe+"-active");
-      //   check.hide("fast");
-      // } else if(classe.slice(-7) == "-active"){
-      //   var resetaClasse = $(".cor-compromisso > input").attr("class").substring(-7);
-      //   $(this).attr("class", resetaClasse);
-      //   check.hide("fast");
-      // } else{
-        $(this).parent().addClass(classe+"-active");
-        check.css("color", "#"+corCheck);
-        check.show("fast");
-      //}
-//      alert(classe.slice(-7));
+      $(".cor-compromisso").each(function(){
+        if($(this).hasClass("-active")){
+          $(this).removeClass("-active");
+          $(this).children(".fa").hide("fast");
+        }
+      });
+
+      $(this).parent().addClass("-active");
+      check.css("color", "#"+corCheck);
+      check.show("fast");
     });
   });
 
