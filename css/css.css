@@ -46,23 +46,67 @@ h3{font-size:1.2em;}
 .header .form-group select option:disabled {color: #CCC;}
 
 .container-fluid{}
-.container-fluid aside{margin: 0; padding: 0;}
+.container-fluid aside{margin:0; padding: 0;}
 .cal{width:100%; border:1px solid #CCC; border-radius:5px; border-collapse: separate; font-size:.9em; padding:5px; margin:10px 0 0 0}
 .cal th td, .cal tr td{text-align:center;}
 
-/* aside */
+/* itens barra lateral */
 .hoje{text-align: center; font-size:1.3em; margin:20px 0 0 0; line-height: 70px; background:linear-gradient(#FFF, #f0f0f0);}
 .hoje .mega-dia-mes{font-size:6em; display:block;}
 
 
 /* tabela dia */
-.box-calendario{height:500px; position: relative; overflow: auto;}
 .tabela-dia{border:1px solid #CCC; width: 100%; border-collapse:separate;}
 .tabela-dia tbody tr td{padding:10px; border: 0; border-collapse: collapse}
 .tabela-dia tbody tr td:first-child{width:5%;}
 .tabela-dia tbody tr{box-shadow:2px 5px 5px #DDD; height: 100px;}
 .tabela-dia tbody tr.hora-atual{background:#ffe8eb;}
 .tabela-dia tbody tr.hora-atual td{border-bottom:2px solid red;}
+.tabela-dia tbody tr td:nth-of-type(2){position: relative;}
+.compromissos-cadastrados {font-size: .8em; line-height: 16px; padding: 0; margin: 0; position: absolute; top: 0; width:99%;height: 100%}
+.compromissos-cadastrados li{float:left;padding: 5px; border-left:2px solid transparent; cursor: pointer; transition: .2s}
+.titulo-compromisso{font-weight: bold;}
+.detalhe-compromisso{width: 90%; display:block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ver-compromissos{font-size:.8em; position: absolute; bottom: 0px; right: 10px; cursor:pointer;}
+
+.compromissos-cadastrados li:hover{transition: .3s}
+
+.compromissos-cadastrados li.compromisso-azul{border-color:#003399;}
+.compromissos-cadastrados li.compromisso-azul:hover {background-color: rgba(0, 51, 153, .25);}
+
+.compromissos-cadastrados li.compromisso-vermelho{border-color:#FF0000;}
+.compromissos-cadastrados li.compromisso-vermelho:hover {background-color: rgba(255, 0, 0, .25);}
+
+.compromissos-cadastrados li.compromisso-verde{border-color:#32CD32;}
+.compromissos-cadastrados li.compromisso-verde:hover{background-color: rgba(50, 205, 50, .25);}
+
+.compromissos-cadastrados li.compromisso-roxo{border-color:#6A5ACD;}
+.compromissos-cadastrados li.compromisso-roxo:hover{background-color: rgba(106, 90, 205, .25);}
+
+.compromissos-cadastrados li.compromisso-ouro{border-color:#FFD700;}
+.compromissos-cadastrados li.compromisso-ouro:hover{background-color: rgba(255, 215, 0, .25);}
+
+.compromissos-cadastrados li.compromisso-laranja{border-color:#FF8C00;}
+.compromissos-cadastrados li.compromisso-laranja:hover{background-color: rgba(255, 140, 0, .25);}
+
+.compromissos-cadastrados li.compromisso-cinza{border-color:#CDCDC1;}
+.compromissos-cadastrados li.compromisso-cinza:hover{background-color: rgba(205, 205, 193, .25);}
+
+.compromissos-cadastrados li.compromisso-rosa{border-color:#C71585;}
+.compromissos-cadastrados li.compromisso-rosa:hover{background-color: rgba(199, 21, 133, .25);}
+
+.compromissos-cadastrados li.compromisso-maestro{border-color:#4F4F28;}
+.compromissos-cadastrados li.compromisso-maestro:hover{background-color: rgba(79, 79, 40, .25);}
+
+/* border color só de exemplo - verificar como será desenvolvido durante a implementação */
+/*.compromissos-cadastrados li:nth-of-type(1){border-color:#32CD32;}
+.compromissos-cadastrados li:nth-of-type(2){border-color:#C71585;}
+.compromissos-cadastrados li:nth-of-type(3){border-color:#4F4F28;}
+.compromissos-cadastrados li:nth-of-type(4){border-color:#003399;}
+.compromissos-cadastrados li:nth-of-type(5){border-color:#6A5ACD;}
+.compromissos-cadastrados li:nth-of-type(6){border-color:#FF0000;}
+.compromissos-cadastrados li:nth-of-type(7){border-color:#FF8C00;}
+.compromissos-cadastrados li:nth-of-type(8){border-color:#FFD700;}*/
 
 /** modal **/
 .modal h2{font-size: 1.5em}
@@ -202,6 +246,9 @@ h3{font-size:1.2em;}
 	max-width: 500px;
 	padding-left: 5px;
 }
+
+
+.modal .compromissos-cadastrados{position: unset; float:left; margin:20px 0;}
 
 /*
 ********************************************************************
