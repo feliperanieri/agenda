@@ -36,6 +36,11 @@
     <aside class="col-sm-2 col-lg-2">
       <button type="button" name="button" class="btn btn-default" data-toggle="modal" data-target="#criacompromissomodal">Criar compromisso</button>
       <table class="cal shadow2">
+        <thead>
+          <tr>
+            <th  colspan="7">Janeiro</th>
+          </tr>
+        </thead>
         <tbody>
           <tr class="semana">
             <td align="center" width="14.3%">Dom</td>
@@ -95,10 +100,32 @@
         <span class="mega-dia-mes">10</span>
         <span class="mega-mes">Janeiro</span>
       </p>
+
+      <article class="resumo-dia">
+        <!-- limitar a 100 caracteres -->
+        <h3>Resumo do dia</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consectetur sed diam quis laoreet.
+        </p>
+        <button type="button" name="button" class="btn btn-default" data-toggle="modal" data-target="#resumoDia">Editar</button>
+      </article>
     </aside>
 
-    <section class="col-sm-10">
+    <section class="main col-sm-10">
       <h2>Seus compromissos de hoje</h2>
+
+      <ul class="calendar-nav">
+        <li>
+          <a href="#" title="Clique para visualizar seus compromissos do dia">Dia</a>
+        </li>
+        <li>
+          <a href="#" title="Clique para visualizar seus compromissos da semana">Semana</a>
+        </li>
+        <li>
+          <a href="#" title="Clique para visualizar seus compromissos do mês">Mês</a>
+        </li>
+      </ul>
+
       <table class="tabela-dia">
         <tbody>
           <tr class="00">
@@ -588,7 +615,7 @@
   </div>
 
 
-  <!-- modal teste -->
+  <!-- modal lista compromisso  -->
   <div class="modal fade" id="listaCompromissos" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -670,6 +697,23 @@
           </ol>
         </div>
         <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal lista compromisso  -->
+  <div class="modal fade" id="resumoDia" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <label>Resumo do dia</label>
+          <textarea class="form-control">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consectetur sed diam quis laoreet.</textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Salvar</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
         </div>
       </div>
