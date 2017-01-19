@@ -38,7 +38,7 @@
       <table class="cal shadow2">
         <thead>
           <tr>
-            <th  colspan="7">Janeiro</th>
+            <th colspan="7">Janeiro</th>
           </tr>
         </thead>
         <tbody>
@@ -96,9 +96,9 @@
       </table>
 
       <p class="hoje shadow2">
-        <span class="mega-dia-semana">Terça-feira</span>
-        <span class="mega-dia-mes">10</span>
-        <span class="mega-mes">Janeiro</span>
+        <span class="mega-dia-semana"></span>
+        <span class="mega-dia-mes"></span>
+        <span class="mega-mes"></span>
       </p>
 
       <article class="resumo-dia">
@@ -112,10 +112,11 @@
     </aside>
 
     <section class="main col-sm-10">
-      <h2>Seus compromissos de hoje</h2>
+
+      <h2 class="tipo-compromisso">Seus compromissos de hoje</h2>
 
       <ul class="calendar-nav">
-        <li>
+        <li class="aba-ativa">
           <a href="#" title="Clique para visualizar seus compromissos do dia">Dia</a>
         </li>
         <li>
@@ -126,7 +127,9 @@
         </li>
       </ul>
 
-      <table class="tabela-dia">
+      <!-- compromissos do dia -->
+      <div class="compromissos-dia aba-compromisso">
+        <table class="tabela-dia">
         <tbody>
           <tr class="00">
             <td><time>00:00</time></td>
@@ -389,6 +392,79 @@
           </tr>
         </tbody>
       </table>
+      </div>
+      <!-- fim compromissos do dia -->
+
+      <!-- compromissos da semana -->
+      <div class="compromissos-semana aba-compromisso">
+        visão dos compromissos da semana
+      </div>
+      <!-- fim compromissos da semana -->
+
+      <!-- compromissos do mês -->
+      <div class="compromissos-mes aba-compromisso">
+        <table class="tabela-mes">
+          <thead>
+            <tr>
+              <th colspan="7">Janeiro</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="semana">
+              <td width="14.3%">Domingo</td>
+              <td width="14.3%">Segunda</td>
+              <td width="14.3%">Terça</td>
+              <td width="14.3%">Quarta</td>
+              <td width="14.3%">Quinta</td>
+              <td width="14.3%">Sexta</td>
+              <td width="14.3%">Sábado</td>
+            </tr>
+            <tr>
+              <td>01</td>
+              <td>02</td>
+              <td>03</td>
+              <td>04</td>
+              <td>05</td>
+              <td>06</td>
+              <td>07</td>
+            </tr>
+            <tr>
+              <td>08</td>
+              <td>09</td>
+              <td>10</td>
+              <td>11</td>
+              <td>12</td>
+              <td>13</td>
+              <td>14</td>
+            </tr>
+            <tr>
+              <td>15</td>
+              <td>16</td>
+              <td>17</td>
+              <td>18</td>
+              <td>19</td>
+              <td>20</td>
+              <td>21</td>
+            </tr>
+            <tr>
+              <td>22</td>
+              <td>23</td>
+              <td>24</td>
+              <td>25</td>
+              <td>26</td>
+              <td>27</td>
+              <td>28</td>
+            </tr>
+            <tr>
+              <td>29</td>
+              <td>30</td>
+              <td>31</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- fim compromissos do mês -->
+
     </section>
   </div>
 
@@ -767,20 +843,61 @@
     var $sidebar   = $("aside"),
         $window    = $(window),
         offset     = $sidebar.offset(),
-        topPadding = 15;
+        topPadding = 15,
+        d = new Date(),
+        h = d.getHours(),
+        day = d.getDate(),
+        weekday = new Array(7),
+        month = new Array(12);
+
+    weekday[0] =  "Domingo";
+    weekday[1] =  "Segunda-feira";
+    weekday[2] =  "Terça-feira";
+    weekday[3] =  "Quarta-feira";
+    weekday[4] =  "Quinta-feira";
+    weekday[5] =  "Sexta-feira";
+    weekday[6] =  "Sábado";
+    n = weekday[d.getDay()];
+
+    month[0] =  "Janeiro";
+    month[1] =  "Fevereiro";
+    month[2] =  "Março";
+    month[3] =  "Abril";
+    month[4] =  "Maio";
+    month[5] =  "Junho";
+    month[6] =  "Julho";
+    month[7] =  "Agosto";
+    month[8] =  "Setembro";
+    month[9] =  "Outubro";
+    month[10] =  "Novembro";
+    month[11] =  "Dezembro";
+    m = month[d.getMonth()];
+
 
     $(".header .detail").animate({
        width: "100%"
      }, 300);
 
+    //hora atual
     $(".tabela-dia tr").each(function(){
-      var d = new Date(),
-          h = d.getHours(),
-          verificaHora = $(this).attr("class");
-          if(verificaHora == h){
-            $(this).addClass("hora-atual");
-          }
+      var verificaHora = $(this).attr("class");
+      if(verificaHora == h){
+        $(this).addClass("hora-atual");
+      }
     });
+
+    //dia atual
+    $(".tabela-mes tr td").each(function(){
+      if($(this).text().substring(0,2) == day){
+        $(this).addClass("dia-atual");
+      }
+    });
+    $(".mega-dia-mes").text(day);
+    $(".mega-dia-semana").text(n);
+
+    //mês atual
+    $(".mega-mes").text(m);
+
 
     //insere id's nas ol e li para funcionamento do drag and drop
     $("ol").each(function(index){
@@ -832,6 +949,28 @@
       $(this).parent().addClass("-active");
       check.css("color", "#"+corCheck);
       check.show("fast");
+    });
+
+    $(".calendar-nav li").click(function(){
+      if($(this).attr("class") != "aba-ativa"){
+        $(".calendar-nav li").removeClass("aba-ativa");
+        $(this).addClass("aba-ativa");
+        $(".aba-compromisso").hide("fast");
+
+        if($(this).children("a").text() == "Semana"){
+          $(".main > h2").text("Seus compromissos da semana")
+          $(".compromissos-semana").show("slow");
+          $(".cal").show()
+        }else if($(this).children("a").text() == "Mês"){
+          $(".main > h2").text("Seus compromissos do mês")
+          $(".compromissos-mes").show("slow");
+          $(".cal").hide()
+        } else{
+          $(".main > h2").text("Seus compromissos de hoje")
+          $(".compromissos-dia").show("slow");
+          $(".cal").show()
+        }
+      }
     });
   });
 

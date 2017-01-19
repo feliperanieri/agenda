@@ -62,11 +62,23 @@ h3{font-size:1.2em;}
 .calendar-nav li{display:inline;}
 .calendar-nav li:last-child{border:none;}
 .calendar-nav li a{text-decoration:none; display:block; padding:10px; float:left; transition: .2s}
-.calendar-nav li a:hover{background-color: rgba(79, 79, 40, 1); color: rgba(255, 255, 255, 1); transition: .3s}
+.calendar-nav li a:hover, .aba-ativa a{background-color: rgba(79, 79, 40, 1); color: rgba(255, 255, 255, 1); transition: .3s}
+
+/* abas tipos de compromissos */
+.compromissos-semana,
+.compromissos-mes{display:none;}
+.aba-compromisso table{width:100%; margin-bottom:20px;}
+.tabela-mes{margin-top:20px;}
+.tabela-mes tr td, .tabela-mes tr th{border:1px solid #CCC; padding:10px}
+.tabela-mes tr td{height: 120px; vertical-align: top;}
+.tabela-mes tr.semana td{height: auto; font-size: .9em}
+.tabela-mes thead{background:linear-gradient(#FFF, #f0f0f0);}
+.tabela-mes thead tr th{text-align: center; font-size: 1.3em;}
+
 
 
 /* tabela dia */
-.tabela-dia{border:1px solid #CCC; width: 100%; border-collapse:separate; margin-top: 20px;}
+.tabela-dia{border:1px solid #CCC; border-collapse:separate; margin-top: 20px;}
 .tabela-dia tbody tr td{padding:10px; border: 0; border-collapse: collapse}
 .tabela-dia tbody tr td:first-child{width:5%;}
 .tabela-dia tbody tr{box-shadow:2px 5px 5px #DDD; height: 100px;}
@@ -78,6 +90,8 @@ h3{font-size:1.2em;}
 .titulo-compromisso{font-weight: bold;}
 .detalhe-compromisso{width: 90%; display:block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .ver-compromissos{font-size:.8em; position: absolute; bottom: 0px; right: 10px; cursor:pointer;}
+
+.dia-atual{background:#fff9e5;}
 
 .compromissos-cadastrados li:hover{transition: .3s}
 
