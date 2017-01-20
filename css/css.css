@@ -51,7 +51,7 @@ h3{font-size:1.2em;}
 .cal{width:100%; border:1px solid #CCC; border-radius:5px; border-collapse: separate; font-size:.9em; padding:5px; margin:10px 0 0 0}
 .cal tr th, .cal tr td{text-align:center;}
 .cal tr th{padding: 5px;}
-.hoje{text-align: center; font-size:1.3em; margin:20px 0 0 0; line-height: 70px; background:linear-gradient(#FFF, #f0f0f0);}
+.hoje{text-align: center; font-size:1.3em; margin:20px 0 0 0; line-height: 70px; background:linear-gradient(#FFF, #f0f0f0);border:1px solid #f0f0f0;}
 .hoje .mega-dia-mes{font-size:6em; display:block;}
 .resumo-dia p{font-size:.9em}
 
@@ -70,10 +70,13 @@ h3{font-size:1.2em;}
 .aba-compromisso table{width:100%; margin-bottom:20px;}
 .tabela-mes{margin-top:20px;}
 .tabela-mes tr td, .tabela-mes tr th{border:1px solid #CCC; padding:10px}
-.tabela-mes tr td{height: 120px; vertical-align: top;}
-.tabela-mes tr.semana td{height: auto; font-size: .9em}
+.tabela-mes tr td{height: 120px; vertical-align: top; position: relative;}
+.tabela-mes tr td ol{width:94%; height:73%; font-size: .7em; top:32px;}
+.tabela-mes tr td ol li{width: 100%; display:block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;padding:0;}
+.tabela-mes tr.semana td{height: auto; font-size: .9em; font-weight: bold;}
 .tabela-mes thead{background:linear-gradient(#FFF, #f0f0f0);}
 .tabela-mes thead tr th{text-align: center; font-size: 1.3em;}
+.tabela-mes .ver-compromissos{font-size:1em; text-decoration: none;}
 
 
 
@@ -87,6 +90,7 @@ h3{font-size:1.2em;}
 .tabela-dia tbody tr td:nth-of-type(2){position: relative;}
 .compromissos-cadastrados {font-size: .8em; line-height: 16px; padding: 0; margin: 0; position: absolute; top: 0; width:99%;height: 100%}
 .compromissos-cadastrados li{float:left;padding: 5px; border-left:2px solid transparent; cursor: pointer; transition: .2s}
+#listaCompromissos .compromissos-cadastrados li{float:none;}
 .titulo-compromisso{font-weight: bold;}
 .detalhe-compromisso{width: 90%; display:block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .ver-compromissos{font-size:.8em; position: absolute; bottom: 0px; right: 10px; cursor:pointer;}
