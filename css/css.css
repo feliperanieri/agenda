@@ -22,7 +22,7 @@ label{font-weight:normal; font-size:1em; display:block;}
 .shadow2{box-shadow:2px 5px 5px #DDD;}
 .upper{text-transform: uppercase;}
 .lower{text-transform: lowercase;}
-.data{position: absolute; top:10px; right:10px;}
+.data{position: absolute; top:15px; right:15px;}
 .btn-default:focus, .btn-default:active{background:#FFF}
 .btn-default:hover{background: #7c7c3f; color: #FFF; transition: .3s}
 .btn-agendamento{margin:10px 20px;}
@@ -38,15 +38,15 @@ label{font-weight:normal; font-size:1em; display:block;}
 h1, h2, h3{color: #7c7c3f;}
 h3{font-size:1.2em;}
 
-.header{position: relative; border-bottom:1px solid #CCC; margin:0 0 20px 0; padding:0; /*background:linear-gradient(#FFF, #f0f0f0); background:#f0f0f0;*/}
+.header{position: fixed; width: 100%; border-bottom:1px solid #CCC; margin:0 0 0 0; padding:0; background:#FFF; z-index:10; /*background:linear-gradient(#FFF, #f0f0f0); background:#f0f0f0;*/}
 .header .detail{position: absolute; border-bottom:3px solid #7c7c3f; bottom: 0; left:0px; display:block; width: 0%;}
-.header h1{font-size:1.5em; margin:10px; float:left;}
-.header .form-group{position:relative; top:5px;}
-.header .form-group .form-control{margin:5px 0 0 0; width: auto;}
+.header h1{font-size:1.5em; margin:12px 15px; float:left;}
+.header .form-group{position:relative; top:2px;}
+.header .form-group .form-control{margin:5px 0 0 0; width: 400px;}
 .header .form-group select option:disabled {color: #CCC;}
 
 .container-fluid{padding: 0 0 0 10px;}
-.container-fluid aside{margin:0; padding: 0;}
+.container-fluid aside{margin:0 0 0 0; padding: 0; top: 65px;}
 /* itens barra lateral */
 .cal{width:100%; border:1px solid #CCC; border-radius:5px; border-collapse: separate; font-size:.9em; padding:5px; margin:10px 0 0 0}
 .cal tr th, .cal tr td{text-align:center;}
@@ -56,13 +56,18 @@ h3{font-size:1.2em;}
 .resumo-dia p{font-size:.9em}
 
 /*itens section principal*/
-.main{position: relative;}
-.calendar-nav{border:1px solid #CCC; padding: 0; margin: 0; position:absolute; top:0; right: 15px;}
+.main{position: relative; top: 65px;}
 .main h2{margin-top:0;}
-.calendar-nav li{display:inline;}
-.calendar-nav li:last-child{border:none;}
-.calendar-nav li a{text-decoration:none; display:block; padding:10px; float:left; transition: .2s}
-.calendar-nav li a:hover, .aba-ativa a{background-color: rgba(79, 79, 40, 1); color: rgba(255, 255, 255, 1); transition: .3s}
+.calendar-nav{padding: 0; margin: 0; position:fixed; top:72px; right: 0; z-index: 20; cursor:pointer;width:13px;}
+.calendar-nav span{font-size:.7em; float:left; margin:3px 5px 0 0; background:#4f4f28; color:#FFF; padding: 2px; text-transform:uppercase; position:absolute; left:-120px; display: none}
+.calendar-nav:hover span{display: inline;}
+.calendar-nav.active i{transform: rotate(180deg);)}
+.calendar-nav.active span{display:none}
+.calendar-nav ul{margin: 0; padding:0; top:-8px; position: relative; display: none;}
+.calendar-nav ul li{display:inline;}
+.calendar-nav ul li:last-child{border:none;}
+.calendar-nav ul li a{text-decoration:none; display:block; padding:10px; float:left; transition: .2s}
+.calendar-nav ul li a:hover, .aba-ativa a{background-color: rgba(79, 79, 40, 1); color: rgba(255, 255, 255, 1); transition: .3s}
 
 /* abas tipos de compromissos */
 .compromissos-semana,
@@ -73,7 +78,7 @@ h3{font-size:1.2em;}
 .tabela-mes tr td{height: 120px; vertical-align: top; position: relative;}
 .tabela-mes tr td ol{width:94%; height:73%; font-size: .7em; top:32px;}
 .tabela-mes tr td ol li{width: 100%; display:block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;padding:0;}
-.tabela-mes tr.semana td{height: auto; font-size: .9em; font-weight: bold;}
+tr.semana td{height: auto; font-size: .9em; font-weight: bold;}
 .tabela-mes thead{background:linear-gradient(#FFF, #f0f0f0);}
 .tabela-mes thead tr th{text-align: center; font-size: 1.3em;}
 .tabela-mes .ver-compromissos{font-size:1em; text-decoration: none;}
