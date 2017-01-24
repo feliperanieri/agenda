@@ -77,13 +77,17 @@ h3{font-size:1.2em;}
 .tabela-mes tr td, .tabela-mes tr th,
 .tabela-semana tr td, .tabela-semana tr th{border:1px solid #CCC; padding:10px}
 .tabela-mes tr td, .tabela-semana tr td{height: 120px; vertical-align: top; position: relative;}
-.tabela-semana{border:1px solid #CCC}
+.tabela-semana{border:1px solid #CCC; margin-bottom: 0 !important;}
 .tabela-semana tr td{height:auto; border-top:none; border-bottom:none;}
-.tabela-semana tr td:nth-of-type(1){font-size:.8em;}
+.tabela-semana tr td:nth-of-type(1){font-size:.8em; border-left:none; width: 45px; text-align: center;}
+.tabela-semana tr.semana td{border:none;}
+.tabela-semana tr.semana td:nth-of-type(1){width: 44px; display: block; border: none;}
 .tabela-mes tr td ol, .tabela-semana tr td ol{width:94%; height:73%; font-size: .7em; top:32px;}
 .tabela-semana tr td ol{top:5px;}
+.dias-semana{overflow: auto; border-bottom:1px solid #CCC; position:relative;}
+.dias-semana table:first-child{position: relative; z-index: 20}
 .tabela-mes tr td ol li, .tabela-semana tr td ol li{width: 100%; display:block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;padding:0;}
-tr.semana td{height: auto; font-size: .9em; font-weight: bold;}
+tr.semana td{height: auto; font-size:.9em; font-weight: bold;}
 .tabela-mes thead, .tabela-semana thead{background:linear-gradient(#FFF, #f0f0f0);}
 .tabela-mes thead tr th{text-align: center; font-size: 1.3em;}
 .tabela-mes .ver-compromissos{font-size:1em; text-decoration: none;}
@@ -110,31 +114,31 @@ tr.semana td{height: auto; font-size: .9em; font-weight: bold;}
 .compromissos-cadastrados li:hover{transition: .3s}
 
 .compromissos-cadastrados li.compromisso-azul{border-color:#003399;}
-.compromissos-cadastrados li.compromisso-azul:hover {background-color: rgba(0, 51, 153, .25);}
+.compromissos-cadastrados li.compromisso-azul:hover {background: rgba(0, 51, 153, .25);}
 
 .compromissos-cadastrados li.compromisso-vermelho{border-color:#FF0000;}
-.compromissos-cadastrados li.compromisso-vermelho:hover {background-color: rgba(255, 0, 0, .25);}
+.compromissos-cadastrados li.compromisso-vermelho:hover {background: rgba(255, 0, 0, .25);}
 
 .compromissos-cadastrados li.compromisso-verde{border-color:#32CD32;}
-.compromissos-cadastrados li.compromisso-verde:hover{background-color: rgba(50, 205, 50, .25);}
+.compromissos-cadastrados li.compromisso-verde:hover{background: rgba(50, 205, 50, .25);}
 
 .compromissos-cadastrados li.compromisso-roxo{border-color:#6A5ACD;}
-.compromissos-cadastrados li.compromisso-roxo:hover{background-color: rgba(106, 90, 205, .25);}
+.compromissos-cadastrados li.compromisso-roxo:hover{background: rgba(106, 90, 205, .25);}
 
 .compromissos-cadastrados li.compromisso-ouro{border-color:#FFD700;}
-.compromissos-cadastrados li.compromisso-ouro:hover{background-color: rgba(255, 215, 0, .25);}
+.compromissos-cadastrados li.compromisso-ouro:hover{background: rgba(255, 215, 0, .25);}
 
 .compromissos-cadastrados li.compromisso-laranja{border-color:#FF8C00;}
-.compromissos-cadastrados li.compromisso-laranja:hover{background-color: rgba(255, 140, 0, .25);}
+.compromissos-cadastrados li.compromisso-laranja:hover{background: rgba(255, 140, 0, .25);}
 
 .compromissos-cadastrados li.compromisso-cinza{border-color:#CDCDC1;}
-.compromissos-cadastrados li.compromisso-cinza:hover{background-color: rgba(205, 205, 193, .25);}
+.compromissos-cadastrados li.compromisso-cinza:hover{background: rgba(205, 205, 193, .25);}
 
 .compromissos-cadastrados li.compromisso-rosa{border-color:#C71585;}
-.compromissos-cadastrados li.compromisso-rosa:hover{background-color: rgba(199, 21, 133, .25);}
+.compromissos-cadastrados li.compromisso-rosa:hover{background: rgba(199, 21, 133, .25);}
 
 .compromissos-cadastrados li.compromisso-maestro{border-color:#4F4F28;}
-.compromissos-cadastrados li.compromisso-maestro:hover{background-color: rgba(79, 79, 40, .25);}
+.compromissos-cadastrados li.compromisso-maestro:hover{background: rgba(79, 79, 40, .25);}
 
 /* border color só de exemplo - verificar como será desenvolvido durante a implementação */
 /*.compromissos-cadastrados li:nth-of-type(1){border-color:#32CD32;}
@@ -363,13 +367,16 @@ FIM COMMUM BUTTON - REMOVER
     transition: .3s;
 }*/
 
-@media only screen and (min-width: 1024px) {
-}
 @media only screen and (max-width: 1024px) {
 h2{font-size:1.5em}
 .cal{font-size:.8em}
 .cal tr th{padding: 2px}
 .calendar-nav li a{padding:8px; font-size: 1em}
+.tabela-mes tr td, .tabela-semana tr td{padding:5px;}
+.tabela-mes .semana, .tabela-semana thead{font-size:.9em;}
+}
+@media only screen and (max-width: 1280px) {
+  .tabela-semana tr td{padding:5px;}
 }
 @media only screen and (width: 768px) {
 
