@@ -74,12 +74,17 @@ h3{font-size:1.2em;}
 .compromissos-mes{display:none;}
 .aba-compromisso table{width:100%; margin-bottom:20px;}
 .tabela-mes{margin-top:20px;}
-.tabela-mes tr td, .tabela-mes tr th{border:1px solid #CCC; padding:10px}
-.tabela-mes tr td{height: 120px; vertical-align: top; position: relative;}
-.tabela-mes tr td ol{width:94%; height:73%; font-size: .7em; top:32px;}
-.tabela-mes tr td ol li{width: 100%; display:block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;padding:0;}
+.tabela-mes tr td, .tabela-mes tr th,
+.tabela-semana tr td, .tabela-semana tr th{border:1px solid #CCC; padding:10px}
+.tabela-mes tr td, .tabela-semana tr td{height: 120px; vertical-align: top; position: relative;}
+.tabela-semana{border:1px solid #CCC}
+.tabela-semana tr td{height:auto; border-top:none; border-bottom:none;}
+.tabela-semana tr td:nth-of-type(1){font-size:.8em;}
+.tabela-mes tr td ol, .tabela-semana tr td ol{width:94%; height:73%; font-size: .7em; top:32px;}
+.tabela-semana tr td ol{top:5px;}
+.tabela-mes tr td ol li, .tabela-semana tr td ol li{width: 100%; display:block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;padding:0;}
 tr.semana td{height: auto; font-size: .9em; font-weight: bold;}
-.tabela-mes thead{background:linear-gradient(#FFF, #f0f0f0);}
+.tabela-mes thead, .tabela-semana thead{background:linear-gradient(#FFF, #f0f0f0);}
 .tabela-mes thead tr th{text-align: center; font-size: 1.3em;}
 .tabela-mes .ver-compromissos{font-size:1em; text-decoration: none;}
 
