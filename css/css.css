@@ -54,24 +54,31 @@ h3{font-size:1.2em;}
 .hoje{text-align: center; font-size:1.3em; margin:20px 0 0 0; line-height: 70px; background:linear-gradient(#FFF, #f0f0f0);border:1px solid #f0f0f0;}
 .hoje .mega-dia-mes{font-size:6em; display:block;}
 .resumo-dia p{font-size:.9em}
+.arrow{color:#CCC; font-weight:normal; cursor: pointer;}
 
 /*itens section principal*/
 .main{position: relative; top: 65px;}
-.main h2{margin-top:0;}
-.calendar-nav{padding: 0; margin: 0; position:fixed; top:72px; right: 0; z-index: 20; cursor:pointer;width:13px;}
-.calendar-nav span{font-size:.7em; float:left; margin:3px 5px 0 0; background:#4f4f28; color:#FFF; padding: 2px; text-transform:uppercase; position:absolute; left:-120px; display: none}
-.calendar-nav:hover span{display: inline;}
-.calendar-nav.active i{transform: rotate(180deg);)}
-.calendar-nav.active span{display:none}
-.calendar-nav ul{margin: 0; padding:0; top:-8px; position: relative; display: none;}
-.calendar-nav ul li{display:inline;}
-.calendar-nav ul li:last-child{border:none;}
-.calendar-nav ul li a{text-decoration:none; display:block; padding:10px; float:left; transition: .2s}
-.calendar-nav ul li a:hover, .aba-ativa a{background-color: rgba(79, 79, 40, 1); color: rgba(255, 255, 255, 1); transition: .3s}
+.main h2{margin-top:0;float: left}
+.calendar-type-nav{padding: 0; margin: 0; position:fixed; top:72px; right: 0; z-index: 20; cursor:pointer;width:13px;}
+.calendar-type-nav span{font-size:.7em; float:left; margin:3px 5px 0 0; background:#4f4f28; color:#FFF; padding: 2px; text-transform:uppercase; position:absolute; left:-120px; display: none}
+.calendar-type-nav:hover span{display: inline;}
+.calendar-type-nav.active i{transform: rotate(180deg);)}
+.calendar-type-nav.active span{display:none}
+.calendar-type-nav ul{margin: 0; padding:0; top:-8px; position: relative; display: none;}
+.calendar-type-nav ul li{display:inline;}
+.calendar-type-nav ul li:last-child{border:none;}
+.calendar-type-nav ul li a{text-decoration:none; display:block; padding:10px; float:left; transition: .2s}
+.calendar-type-nav ul li a:hover, .aba-ativa a{background-color: rgba(79, 79, 40, 1); color: rgba(255, 255, 255, 1); transition: .3s}
+
+.calendar-nav{float: left; padding:0; margin:-2px 0 0 20px;}
+.calendar-nav li{float:left; margin:3px}
+.calendar-nav li span{display: block; cursor: pointer; background:linear-gradient(#FFF, #f0f0f0); padding:5px 20px; border: 1px solid #CCC; transition: .2s}
+.calendar-nav li span:hover{border:1px solid #999; transition: .3s;}
 
 /* abas tipos de compromissos */
 .compromissos-semana,
 .compromissos-mes{display:none;}
+.aba-compromisso{clear: both;}
 .aba-compromisso table{width:100%; margin-bottom:20px;}
 .tabela-mes{margin-top:20px;}
 .tabela-mes tr td, .tabela-mes tr th,
@@ -84,14 +91,15 @@ h3{font-size:1.2em;}
 .tabela-semana tr.semana td:nth-of-type(1){width: 44px; display: block; border: none;}
 .tabela-mes tr td ol, .tabela-semana tr td ol{width:94%; height:73%; font-size: .7em; top:32px;}
 .tabela-semana tr td ol{top:5px;}
-.dias-semana{overflow: auto; border-bottom:1px solid #CCC; position:relative;}
+.dias-semana{overflow: auto; border-bottom:1px solid #CCC; position:relative; width:100%;}
 .dias-semana table:first-child{position: relative; z-index: 20}
 .tabela-mes tr td ol li, .tabela-semana tr td ol li{width: 100%; display:block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;padding:0;}
 tr.semana td{height: auto; font-size:.9em; font-weight: bold;}
 .tabela-mes thead, .tabela-semana thead{background:linear-gradient(#FFF, #f0f0f0);}
 .tabela-mes thead tr th{text-align: center; font-size: 1.3em;}
 .tabela-mes .ver-compromissos{font-size:1em; text-decoration: none;}
-
+.tabela-mes .agendar-dia{padding: 2px; border:1px solid transparent; cursor: pointer; transition: .3s}
+.tabela-mes .agendar-dia:hover{border-radius: 100%; background-color: rgba(79, 79, 40, 1);color: rgba(255, 255, 255, 1); transition: .2s;}
 
 
 /* tabela dia */
@@ -371,7 +379,7 @@ FIM COMMUM BUTTON - REMOVER
 h2{font-size:1.5em}
 .cal{font-size:.8em}
 .cal tr th{padding: 2px}
-.calendar-nav li a{padding:8px; font-size: 1em}
+.calendar-type-nav li a{padding:8px; font-size: 1em}
 .tabela-mes tr td, .tabela-semana tr td{padding:5px;}
 .tabela-mes .semana, .tabela-semana thead{font-size:.9em;}
 }
